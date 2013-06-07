@@ -31,7 +31,11 @@ class GitlabMergeRequestIssueHook < Redmine::Hook::ViewListener
     
     gitlab_url = Setting.plugin_redmine_gitlab_merge_request['gitlab_url'] if gitlab_url.blank?
     
-    if gitlab_url.blank? || project_name.blank? || nil == (gitlab_url =~ /^#{URI::ABS_URI}$/)
+    if gitlab_url.blank? || project_name.blank?
+      return ''
+    end
+
+    if nil == (gitlab_url =~ /^#{URI::ABS_URI}$/)
       return '<hr /><span style="color:red">Invalid url for gitlab merge request</span>'
     end
     

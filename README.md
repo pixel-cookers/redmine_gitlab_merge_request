@@ -17,3 +17,5 @@ TODO :
 * Auto generate custom fields or move to a model
 * Put link in action menu
 * Use gitlab API to show current Merge request with link
+* I18n : translate label
+* Cleanup code 

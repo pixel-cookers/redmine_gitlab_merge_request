@@ -62,7 +62,7 @@ class GitlabMergeRequestIssueHook < Redmine::Hook::ViewListener
     merge_request = "#{merge_request}&merge_request[milestone_id]=#{milestone_id}" if milestone_id.present?
     
 
-    return "<hr /><a class=\"icon icon-add\" href=\"#{merge_request}\">New Merge Request</a>"
+    return "<hr /><a class=\"icon icon-add\" href=\"#{merge_request}\" target="_blank">Open a merge request</a>"
   end
 
 end

@@ -1,0 +1,18 @@
+
+fr:
+  gitlab_merge_request_tab: "Gitlab merge request"
+  
+  field_gitlab_url: "Gitlab Url"
+  field_project_name: "Nom du Projet"
+  field_assignee: "Id de l'assigné"
+  field_milestone: "Id du jalon"
+  field_source: "Branche source"
+  field_target: "Branche destination"
+  field_use_parent_settings: "Utiliser les paramètres du projet parent"
+  
+  new_merge_request: "Nouvelle merge request"
+  
+  permission_new_gitlab_merge_request: "Nouvelle merge request"
+  permission_manage_gitlab_merge_request: "Gérer les paramètres de merge request"
+  
+  gitlab_merge_request_project_settings_help: "Vous pouvez utiliser des variables (:id, :title) dans les champs de branches, elles seront substituées par les valeurs de la demande"

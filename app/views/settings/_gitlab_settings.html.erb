@@ -1,43 +1,7 @@
-<% string_fields = ProjectCustomField.find :all %>
-<% select_gitlab_url_field = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['gitlab_url_field'].to_i) %>
-<% select_gitlab_project_name_field = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['gitlab_project_name_field'].to_i) %>
-<% select_gitlab_assignee_id_field = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['gitlab_assignee_id_field'].to_i) %>
-<% select_gitlab_milestone_id_field = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['gitlab_milestone_id_field'].to_i) %>
-<% select_gitlab_source_branch_field = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['gitlab_source_branch_field'].to_i) %>
-<% select_gitlab_target_branch_field = '<option value="">(Select one)</option>' << options_from_collection_for_select(string_fields, :id, :name, @settings['gitlab_target_branch_field'].to_i) %>
-
 <fieldset>
 <legend>Gitlab Merge Resquest settings</legend>
 <p><label>Gitlab global url</label>
 <%= text_field_tag 'settings[gitlab_url]', @settings['gitlab_url'] %><br />
-</p>
-
-<p><label>Gitlab url custom field</label>
-<%= select_tag 'settings[gitlab_url_field]', select_gitlab_url_field.html_safe %><br />
-</p>
-</fieldset>
-
-
-<fieldset>
-<legend>Project custom fields</legend>
-<p><label>Gitlab project name field</label>
-<%= select_tag 'settings[gitlab_project_name_field]', select_gitlab_project_name_field.html_safe %><br />
-</p>
-
-<p><label>Assignee id field</label>
-<%= select_tag 'settings[gitlab_assignee_id_field]', select_gitlab_assignee_id_field.html_safe %><br />
-</p>
-
-<p><label>Milestone id field</label>
-<%= select_tag 'settings[gitlab_milestone_id_field]', select_gitlab_milestone_id_field.html_safe %><br />
-</p>
-
-<p><label>Source Branch field</label>
-<%= select_tag 'settings[gitlab_source_branch_field]', select_gitlab_source_branch_field.html_safe %><br />
-</p>
-
-<p><label>Target branch field</label>
-<%= select_tag 'settings[gitlab_target_branch_field]', select_gitlab_target_branch_field.html_safe %><br />
 </p>
 
 </fieldset>

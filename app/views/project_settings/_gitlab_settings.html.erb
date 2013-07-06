@@ -1,0 +1,31 @@
+<%= labelled_form_for @gitlab_merge_request,
+           :as => :merge_request,
+           :url => { :controller => 'merge_request', :action => 'edit', :id => @project },
+           :remote => true,
+           :method => 'post' do |f| %>
+
+
+<fieldset class="box tabular">
+
+    <%= error_messages_for 'merge_request' %>
+
+    <p><%= f.text_field :gitlab_url, :size => 60, :required => false %></p>
+
+    <p><%= f.text_field :project_name, :size => 30, :required => false %></p>
+
+    <p><%= f.text_field :assignee_id, :size => 30, :required => false %></p>
+
+    <p><%= f.text_field :milestone_id, :size => 30, :required => false %></p>
+
+    <p><%= f.text_field :source, :size => 30, :required => false %></p>
+
+    <p><%= f.text_field :target, :size => 30, :required => false %></p>
+
+    <%#<p><%= f.check_box :use_parent_settings %>
+    <%#</p>%>
+
+    <div><%= l(:gitlab_merge_request_project_settings_help) %></div>
+
+    <div><%= submit_tag(l(:button_save)) %></div>
+</fieldset>
+<% end %>

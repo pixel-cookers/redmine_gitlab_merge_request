@@ -1,3 +1,18 @@
 # English strings go here for Rails i18n
 en:
-  label_url: Url
+  gitlab_merge_request_tab: "Gitlab merge request"
+  
+  field_gitlab_url: "Gitlab Url"
+  field_project_name: "Gitlab project name"
+  field_assignee: "Assignee Id"
+  field_milestone: "Milestone Id"
+  field_source: "Source branch"
+  field_target: "Target branch"
+  field_use_parent_settings: "Use settings from parent project"
+  
+  new_merge_request: "New merge request"
+  
+  permission_new_gitlab_merge_request: "New merge request"
+  permission_manage_gitlab_merge_request: "Manage merge request settings"
+  
+  gitlab_merge_request_project_settings_help: "You can use variables (:id, :title) in branch's fields"

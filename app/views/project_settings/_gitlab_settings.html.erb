@@ -9,23 +9,39 @@
 
     <%= error_messages_for 'merge_request' %>
 
-    <p><%= f.text_field :gitlab_url, :size => 60, :required => false %></p>
+<% if @project.child? %>
+    <p><%= f.check_box :use_parent_settings %></p>
+    
+    <div id="merge_request_project_param" <% if @merge_request.use_parent_settings %>style="display: none;"<% end%>>
+<% else %>
+    <div id="merge_request_project_param">
+<% end %>
+        <p><%= f.text_field :gitlab_url, :size => 60, :required => false %></p>
 
-    <p><%= f.text_field :project_name, :size => 30, :required => false %></p>
+        <p><%= f.text_field :project_name, :size => 30, :required => false %></p>
 
-    <p><%= f.text_field :assignee_id, :size => 30, :required => false %></p>
-
-    <p><%= f.text_field :milestone_id, :size => 30, :required => false %></p>
-
-    <p><%= f.text_field :source, :size => 30, :required => false %></p>
-
-    <p><%= f.text_field :target, :size => 30, :required => false %></p>
-
-    <%#<p><%= f.check_box :use_parent_settings %>
-    <%#</p>%>
+        <p><%= f.text_field :assignee_id, :size => 30, :required => false %></p>
+    
+        <p><%= f.text_field :milestone_id, :size => 30, :required => false %></p>
+    
+        <p><%= f.text_field :source, :size => 30, :required => false %></p>
+    
+        <p><%= f.text_field :target, :size => 30, :required => false %></p>
+    </div>
 
     <div><%= l(:gitlab_merge_request_project_settings_help) %></div>
 
     <div><%= submit_tag(l(:button_save)) %></div>
 </fieldset>
+
 <% end %>
+
+<script type="text/javascript">
+$('#merge_request_use_parent_settings').on('change', function(){
+    if ($(this).is(':checked')) {
+        $('#merge_request_project_param').fadeOut();
+    } else {
+        $('#merge_request_project_param').fadeIn();
+    }
+});
+</script>

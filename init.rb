@@ -4,7 +4,7 @@ Redmine::Plugin.register :redmine_gitlab_merge_request do
   name 'Gitlab merge request'
   author 'Jeremie Augustin'
   description 'Add "new merge request" link that auto fill form on Gitlab merge request page'
-  version '0.0.2'
+  version '0.0.3'
 
   requires_redmine :version_or_higher => '2.0.0'
   

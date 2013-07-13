@@ -27,10 +27,8 @@ RAILS_ENV=production rake redmine:plugins:migrate
 
 
 TODO :
-
-
+------
 * Put link in action menu
-* Use parent project's configuration
 * Use gitlab API to show current Merge request with link
 * Cleanup code 
 * Use gilab API to select assignee/milestone from a list
